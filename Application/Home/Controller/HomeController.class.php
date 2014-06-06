@@ -31,4 +31,11 @@ class HomeController extends Controller {
 		is_login() || $this->error('您还没有登录，请先登录！', U('User/login'));
 	}
 
+	protected function getChannels(){		
+		$map = array('status' => 1,'pid' => 0);
+		$channel = D('Channel');
+		$list = $channel->where($map)->select();
+		$this->assign("channels",$list);
+	}
+
 }

@@ -24,7 +24,10 @@ class ArticleController extends HomeController {
 		//内容可以通过模板标签自行定制
 
 		/* 模板赋值并渲染模板 */
+		$this->getChannels();
 		$this->assign('category', $category);
+		//var_dump($category);
+		//$this->display('index');
 		$this->display($category['template_index']);
 	}
 

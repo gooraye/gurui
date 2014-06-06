@@ -25,6 +25,8 @@ class IndexController extends HomeController {
 		$this->display();
 //		redirect ( U ( 'home/index/main' ) );
 	}
+	
+
 	// 系统介绍
 	public function introduction() {
 		$this->display ();
@@ -43,17 +45,17 @@ class IndexController extends HomeController {
 	}
 	// 系统关于
 	public function about() {
+		$map = array('status' => 1,'pid' => 0);
+		$channel = D('Channel');
+		$list = $channel->where($map)->select();
+		$this->assign("channels",$list);
 		$this->display ();
 	}
 	// 授权协议
 	public function license() {
 		$this->display ();
 	}
-	// 下载weiphp
-	public function downloadFile() {
-		M ( 'config' )->where ( 'name="DOWNLOAD_COUNT"' )->setInc ( 'value' );
-		redirect ( 'http://down.weiphp.cn/weiphp.zip' );
-	}
+	
 	// 远程获取最新版本号
 	public function update_version() {
 		die ( M ( 'update_version' )->getField ( "max(`version`)" ) );
