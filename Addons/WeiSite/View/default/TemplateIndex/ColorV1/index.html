@@ -1,0 +1,60 @@
+<include file="Public/mobile_head"/>	
+<link href="{:CUSTOM_TEMPLATE_PATH}Index/ColorV1/main.css?v={:SITE_VERSION}" rel="stylesheet" type="text/css">
+<body id="weisite">
+<div class="container">
+    <if condition="!empty($slideshow)">
+    <section class="banner">
+    	<ul>
+        <volist name="slideshow" id="vo">
+        	<li>
+                 <a href="{$vo.url}">
+                        <img src="{$vo.img}" alt="{$vo.title}" />                        
+            	</a>
+            	<span class="title">{$vo.title}</span>
+            </li>
+         </volist>
+        </ul>
+        <span class="identify">
+        <volist name="slideshow" id="vo">
+        	<em></em>
+         </volist>        
+        </span>
+    </section>
+    </if>
+    <if condition="!empty($telephone)">
+
+        <div class="arrow"><a href="tel:{$telephone}"><i class="fa fa-phone"></i><span>联系电话： {$telephone}</span></a></div>
+    </if>
+    <if condition="!empty($category)">
+    <section>
+    	<div class="icon_lists">
+            <volist name="category" id="vo">
+                <a class="item" href="{$vo.url}">
+                    <span class="icon random_color">
+                        <img src="{$vo.icon}" alt="{$vo.title}"/>
+                        <!-- <img src="{$vo.imgurl}" alt="{$vo.title}" />         -->
+                    </span>
+                    <span class="click_item_txt">{$vo.title}</span>
+                </a>
+            </volist>
+        </div>
+    </section>
+    </if>
+</div>
+<!-- 底部导航 -->
+{$footer_html}
+<!-- 统计代码 -->
+<notempty name="config.code">
+<p class="hide bdtongji">
+{$config.code}
+</p>
+</notempty>
+</body>
+<script type="text/javascript">
+$(function(){
+	$.Gooraye.initBanner(true,5000);
+	$.Gooraye.setRandomColor('.random_color');
+})
+
+</script>
+</html>
