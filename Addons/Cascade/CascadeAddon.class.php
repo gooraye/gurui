@@ -7,7 +7,7 @@ use Common\Controller\Addon;
 /**
  * 级联菜单插件
  *
- * @author 凡星
+ * @author 贝贝
  */
 class CascadeAddon extends Addon {
 	public $info = array (
@@ -15,7 +15,7 @@ class CascadeAddon extends Addon {
 			'title' => '级联菜单',
 			'description' => '支持无级级联菜单，用于地区选择、多层分类选择等场景。菜单的数据来源支持查询数据库和直接用户按格式输入两种方式',
 			'status' => 1,
-			'author' => '凡星',
+			'author' => '贝贝',
 			'version' => '0.1',
 			'has_adminlist' => 0,
 			'type' => 0 

@@ -5,7 +5,7 @@ use Common\Controller\Addon;
 
 /**
  * 刮刮卡插件
- * @author 凡星
+ * @author 贝贝
  */
 
     class ScratchAddon extends Addon{
@@ -15,7 +15,7 @@ use Common\Controller\Addon;
             'title'=>'刮刮卡',
             'description'=>'刮刮卡',
             'status'=>1,
-            'author'=>'凡星',
+            'author'=>'贝贝',
             'version'=>'0.1',
             'has_adminlist'=>1,
             'type'=>1         

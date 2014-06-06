@@ -5,7 +5,7 @@ use Common\Controller\Addon;
 
 /**
  * 微考试插件
- * @author 凡星
+ * @author 贝贝
  */
 
     class ExamAddon extends Addon{
@@ -15,7 +15,7 @@ use Common\Controller\Addon;
             'title'=>'微考试',
             'description'=>'主要功能有试卷管理，题目录入管理，考生信息和考分汇总管理。',
             'status'=>1,
-            'author'=>'凡星',
+            'author'=>'贝贝',
             'version'=>'0.1',
             'has_adminlist'=>1,
             'type'=>1         

@@ -5,7 +5,7 @@ use Common\Controller\Addon;
 
 /**
  * 优惠券插件
- * @author 凡星
+ * @author 贝贝
  */
 
     class CouponAddon extends Addon{
@@ -15,7 +15,7 @@ use Common\Controller\Addon;
             'title'=>'优惠券',
             'description'=>'配合粉丝圈子，打造粉丝互动的运营激励基础',
             'status'=>1,
-            'author'=>'凡星',
+            'author'=>'贝贝',
             'version'=>'0.1',
             'has_adminlist'=>1,
             'type'=>1         

@@ -5,7 +5,7 @@ use Common\Controller\Addon;
 
 /**
  * 聚合数据插件
- * @author 凡星
+ * @author 贝贝
  */
 
     class JuheAddon extends Addon{
@@ -15,7 +15,7 @@ use Common\Controller\Addon;
             'title'=>'聚合数据',
             'description'=>'集成聚合数据（http://www.juhe.cn）平台的功能',
             'status'=>1,
-            'author'=>'凡星',
+            'author'=>'贝贝',
             'version'=>'0.1',
             'has_adminlist'=>0,
             'type'=>1         

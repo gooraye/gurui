@@ -5,7 +5,7 @@ use Common\Controller\Addon;
 
 /**
  * 微信宣传页插件
- * @author 凡星
+ * @author 贝贝
  */
 
     class LeafletsAddon extends Addon{
@@ -15,7 +15,7 @@ use Common\Controller\Addon;
             'title'=>'微信宣传页',
             'description'=>'微信公众号二维码推广页面，用作推广或者制作广告易拉宝，可以发布到QQ群微博博客论坛等等...',
             'status'=>1,
-            'author'=>'凡星',
+            'author'=>'贝贝',
             'version'=>'0.1',
             'has_adminlist'=>0,
             'type'=>1         

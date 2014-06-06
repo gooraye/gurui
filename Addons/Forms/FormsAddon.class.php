@@ -5,7 +5,7 @@ use Common\Controller\Addon;
 
 /**
  * 通用表单插件
- * @author 凡星
+ * @author 贝贝
  */
 
     class FormsAddon extends Addon{
@@ -15,7 +15,7 @@ use Common\Controller\Addon;
             'title'=>'通用表单',
             'description'=>'管理员可以轻松地增加一个表单用于收集用户的信息，如活动报名、调查反馈、预约填单等',
             'status'=>1,
-            'author'=>'凡星',
+            'author'=>'贝贝',
             'version'=>'0.1',
             'has_adminlist'=>1,
             'type'=>1         

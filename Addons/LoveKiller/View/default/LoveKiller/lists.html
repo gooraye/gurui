@@ -3,13 +3,17 @@
   <div class="span9 page_message">
     <section id="contents"> 
       <ul class="tab-nav nav">
-        <li class="current"><a href="{:U('lists')}">游戏列表</a></li>
+        <li class="current"><a href="{:U('lists')}">游戏列表
+        <span class="arrow fa fa-sort-up"></span></a></li>
       </ul>
-      <div class="cf">
+      <div class="sub-tab-nav">
+            
+</div>
+      <div class="cf  table-bar">
         <div class="fl">
           <empty name="model.extend">
-            <div class="tools"> <a class="home_btn" href="{:addons_url($_REQUEST ['_addons'].'://'.$_REQUEST ['_controller'].'/add')}">新 增</a>
-              <button class="home_btn ajax-post confirm" target-form="ids" url="{:U('del?model='.$model['id'])}">删 除</button>
+            <div class="tools"> <a class="btn" href="{:addons_url($_REQUEST ['_addons'].'://'.$_REQUEST ['_controller'].'/add')}">新 增</a>
+              <button class="btn ajax-post confirm" target-form="ids" url="{:U('del?model='.$model['id'])}">删 除</button>
             </div>
           </empty>
         </div>
@@ -23,7 +27,7 @@
       
       <!-- 数据列表 -->
       <div class="data-table">
-        <div class="data-table table-striped">
+        <div class="table-striped">
           <table>
             <!-- 表头 -->
             <thead>

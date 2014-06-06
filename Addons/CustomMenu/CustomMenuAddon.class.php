@@ -5,7 +5,7 @@ use Common\Controller\Addon;
 
 /**
  * 自定义菜单插件
- * @author 凡星
+ * @author 贝贝
  */
 
     class CustomMenuAddon extends Addon{
@@ -15,7 +15,7 @@ use Common\Controller\Addon;
             'title'=>'自定义菜单',
             'description'=>'自定义菜单能够帮助公众号丰富界面，让用户更好更快地理解公众号的功能',
             'status'=>1,
-            'author'=>'凡星',
+            'author'=>'贝贝',
             'version'=>'0.1',
             'has_adminlist'=>1,
             'type'=>1         

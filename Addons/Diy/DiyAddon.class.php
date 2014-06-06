@@ -7,7 +7,7 @@ use Common\Controller\Addon;
 /**
  * 万能页面插件
  *
- * @author 凡星
+ * @author 贝贝
  */
 class DiyAddon extends Addon {
 	public $info = array (
@@ -15,7 +15,7 @@ class DiyAddon extends Addon {
 			'title' => '万能页面',
 			'description' => '可以通过拖拉的方式配置一个3G页面',
 			'status' => 1,
-			'author' => '凡星',
+			'author' => '贝贝',
 			'version' => '0.1',
 			'has_adminlist' => 1,
 			'type' => 1 

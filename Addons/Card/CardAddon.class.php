@@ -15,7 +15,7 @@ use Common\Controller\Addon;
             'title'=>'会员卡',
             'description'=>'提供会员卡基本功能：会员卡制作、会员管理、通知发布、优惠券发布等功能，用户可在此基础上扩展自己的具体业务需求，如积分、充值、签到等',
             'status'=>1,
-            'author'=>'凡星',
+            'author'=>'贝贝',
             'version'=>'0.1',
             'has_adminlist'=>0,
             'type'=>1         

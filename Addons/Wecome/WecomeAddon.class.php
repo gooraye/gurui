@@ -5,7 +5,7 @@ use Common\Controller\Addon;
 
 /**
  * 欢迎语插件
- * @author 凡星
+ * @author 贝贝
  */
 
     class WecomeAddon extends Addon{
@@ -17,7 +17,7 @@ use Common\Controller\Addon;
             'title'=>'欢迎语',
             'description'=>'用户关注公众号时发送的欢迎信息，支持文本，图片，图文的信息',
             'status'=>1,
-            'author'=>'凡星',
+            'author'=>'贝贝',
             'version'=>'0.1'
         );
 

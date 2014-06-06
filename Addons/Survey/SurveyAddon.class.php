@@ -7,7 +7,7 @@ use Common\Controller\Addon;
 /**
  * 微调研插件
  * 
- * @author 凡星
+ * @author 贝贝
  */
 class SurveyAddon extends Addon {
 	public $info = array (
@@ -15,7 +15,7 @@ class SurveyAddon extends Addon {
 			'title' => '微调研',
 			'description' => '实现通用的调研功能，支持单选、多选和简答三种题目的录入',
 			'status' => 1,
-			'author' => '凡星',
+			'author' => '贝贝',
 			'version' => '0.1',
 			'has_adminlist' => 1,
 			'type' => 1 
