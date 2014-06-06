@@ -114,4 +114,7 @@ class KeywordController extends HomeController {
 		
 		parent::common_lists ( $model, 0, 'Addons/lists' );
 	}
+	public function del(){
+       		parent::common_del ( $this->model);
+	}
 }
