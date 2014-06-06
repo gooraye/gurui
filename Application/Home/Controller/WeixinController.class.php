@@ -69,8 +69,11 @@ class WeixinController extends HomeController {
 			} else {
 				return true;
 			}
+			// 记录日志
+			addWeixinLog ( $key, 'event'.serialize($addons) );
 		}
 		
+
 		// 通过获取上次缓存的用户状态来定位处理的插件
 		$openid = $data ['FromUserName'];
 		$user_status = S ( 'user_status_' . $openid );
@@ -129,7 +132,10 @@ class WeixinController extends HomeController {
 				$this->_contain_keyword ( $keywordInfo, $key, $addons, $keywordArr );
 			}
 		}
+
+
 		
+
 		// 以上都无法定位插件时，如果开启了智能聊天，则默认使用智能聊天插件
 		if (! isset ( $addons [$key] ) && isset ( $addon_list ['Chat'] )) {
 			$addons [$key] = 'Chat';

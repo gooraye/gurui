@@ -187,7 +187,7 @@ class WeixinAddonModel extends WeixinModel {
 	// 自定义菜单事件
 	public function click($dataArr) {
 		// var_dump($dataArr
-		addWeixinLog($dataArr['EventKey'],"click");
+//		addWeixinLog($dataArr['EventKey'],"click");
 		$content = $this->_joke($dataArr['EventKey']);
 		if(!empty($content))
 		{
