@@ -25,7 +25,13 @@ class WeixinModel extends Model {
 	public function getData() {
 		return $this->data;
 	}
+
 	/* ========================发送被动响应消息 begin================================== */
+	/*消息转入多客服*/
+	public function transCustServ() {
+	    $msg = array(); 
+	    $this->_replyData ( $msg, 'transfer_customer_service' );
+	}
 	/* 回复文本消息 */
 	public function replyText($content) {
 		$msg ['Content'] = $content;

@@ -131,16 +131,24 @@ class WeixinController extends HomeController {
 			foreach ( $list as $keywordInfo ) {
 				$this->_contain_keyword ( $keywordInfo, $key, $addons, $keywordArr );
 			}
+		}		
+
+		// 以上都无法定位插件时，如果开启了客服，
+		if (isset ( $addon_list ['CustomerService'] )) {
+			$custServConfig = getAddonConfig('CustomerService');
+			//根据客服配置来决定是否使用客服插件
+			if($custServConfig['trigger'] == 2 && ! isset ( $addons [$key] )){
+				$addons [$key] = 'CustomerService';
+			}elseif($custServConfig['trigger'] == 1){
+				$addons [$key] = 'CustomerService';
+			}
 		}
-
-
-		
 
 		// 以上都无法定位插件时，如果开启了智能聊天，则默认使用智能聊天插件
 		if (! isset ( $addons [$key] ) && isset ( $addon_list ['Chat'] )) {
 			$addons [$key] = 'Chat';
 		}
-		
+
 		// 最终也无法定位到插件，终止操作
 		if (! isset ( $addons [$key] ) || ! file_exists ( ONETHINK_ADDON_PATH . $addons [$key] . '/Model/WeixinAddonModel.class.php' )) {
 			return false;
