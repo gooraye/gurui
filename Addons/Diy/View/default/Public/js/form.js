@@ -4,7 +4,7 @@ var htmlUrl = parent.currentTargetParam.htmlUrl;
 var saveUrl = parent.currentTargetParam.saveUrl;
 var templateId = parent.currentTargetParam.templateId;
 var DiyPageId = parent.DiyPageId;
-var WeiPHPMid = parent.WeiPHPMid;
+var Mid = parent.Mid;
 $('#confirm,#editwidgetConfirm').click(function(){
 	var formData = $('#baseSettingForm').serialize()+'&'+$('#editwidgetForm').serialize();;
 	

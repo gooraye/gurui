@@ -37,12 +37,23 @@ class AddonsController extends Controller {
 		defined ( '_ACTION' ) or define ( '_ACTION', $_action );
 		
 		$token = get_token();
+
 		if(in_array($_action, array('lists', 'config','nulldeal')) && (empty($token) || $token=='-1')){
 			$this->error ( '请先增加公众号！', U('Home/MemberPublic/lists') );
 		}
 
 		$this->_nav ();
+
+		$map['token'] = $token;
 		
+		$member = M('MemberPublic')->where($map)->find();
+
+		// dump($member);
+		if($member){
+			$this->assign("MEMBER_PUBLIC_COPYRIGHT",$member['public_name']);
+		}else{
+			//算是异常情况了
+		}
 		if (! empty ( $_addons ) && ! empty ( $_controller ) && ! empty ( $_action )) {
 			tongji($_addons);
 			

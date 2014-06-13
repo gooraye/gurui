@@ -103,7 +103,7 @@ function openSetDailog(widget_name,url,htmlUrl,saveUrl){
 		$('#setDialog .content').html("");
 		$('#setDialog').show();
 		$('#setDialog').addClass('dialog_loading');
-		var templateId = new Date().getTime()+WeiPHPMid;
+		var templateId = new Date().getTime()+Mid;
 		var paramData ="";
 		if(currentTarget.data('id')!=undefined && currentTarget.data('id')!=""){
 			templateId = currentTarget.data('id');

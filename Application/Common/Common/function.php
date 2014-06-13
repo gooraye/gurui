@@ -1055,7 +1055,7 @@ function get_cover($cover_id, $field = null) {
 * 修改原先get_cover_url 在上传到qiniu时，不能得到正确图片链接地址的错误
 * author 贝贝 <hebiduhebi@163.com>
 */
-function get_cover_url($cover_id,$default='http://gooraye.qiniudn.com/gr_Goo.png') {
+function get_cover_url($cover_id,$default='http://gooraye02.qiniudn.com/gr_Goo.png') {
 	if (empty ( $cover_id )) {
 		return $default;
 	}

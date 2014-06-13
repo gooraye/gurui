@@ -37,7 +37,7 @@ class PictureModel extends Model{
     public function upload($files, $setting, $driver = 'Local', $config = null){
         /* 上传文件 */
         $setting['callback'] = array($this, 'isFile');
-		$setting['removeTrash'] = array($this, 'removeTrash');
+        // $setting['removeTrash'] = array($this, 'removeTrash');
         $Upload = new Upload($setting, $driver, $config);
         $info   = $Upload->upload($files);
 
