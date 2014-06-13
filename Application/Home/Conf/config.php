@@ -107,8 +107,8 @@ return array(
     'UPLOAD_QINIU_CONFIG'=>array(
           'accessKey'=>'8-cn8v-0XK3B4jEvd3epmAtsERVHW5VHjKYLB-oO',
         'secrectKey'=>'v7f020a-EofZNR2QViboe5UZGZvXRxKmkONFypXT',
-        'bucket'=>'gooraye',
-        'domain'=>'gooraye.qiniudn.com',
+        'bucket'=>'gooraye02',
+        'domain'=>'gooraye02.qiniudn.com',
         'timeout'=>3600,
     ),
 

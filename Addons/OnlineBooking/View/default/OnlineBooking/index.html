@@ -229,10 +229,14 @@ $(function () {
            data: $('#orderForm').serialize(),
            success: function(data){
                 // console.log(data);
-                if(data.status){                        
-                    alert(data.info);
-                }else{
-                    alert(data.info);
+                 try{
+                    if(data.status){                        
+                        alert(data.info);
+                    }else{
+                        alert(data.info);
+                    }
+                }catch(e){
+                        alert("提交出错,请刷新页面重试一次");
                 }
            }
         });

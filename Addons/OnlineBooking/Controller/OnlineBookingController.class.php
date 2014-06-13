@@ -147,13 +147,14 @@ class OnlineBookingController extends AddonsController{
 		if($result[0]  === true || $result[1]  ===  true){
 
 			//var_dump($result);
-			if($result[1] !== true){
+			if(($noticeWay & 1) == 1 && $result[1] !== true){
 				$this->error("短信提醒发送失败!".$result[1]);
-			}elseif($result[0] !== true){
+			}elseif(($noticeWay & 4) == 4 && $result[0] !== true){
 				$this->error("邮件提醒发送失败!".$result[0]);
 			}else{
 				$this->success("提交成功，请等候客服联系您!");
 			}
+
 
 		}else{
 
