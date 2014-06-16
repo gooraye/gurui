@@ -19,8 +19,13 @@ border-radius: 6px;margin-left: 5px;width: 12px;height: 12px;background: #fff;}
     <section class="banner">
     	<ul>
         <php>foreach($list_data as $k=>$vo){ if($k>2) continue; </php>
-        	<li>
-            	<a href="{:U('detail', 'id='.$vo[id])}"><img src="{$vo.cover|get_cover_url}"/></a>
+        	<li> 
+                <empty name="vo.tourl">
+                 <a href="{:U('detail', 'id='.$vo[id])}">
+              <else/>
+                <a href="{$vo[tourl] }">
+              </empty>
+              <img src="{$vo.cover|get_cover_url}"/></a>
             	<span class="title">{$vo.title}</span>
             </li>
          <php>$img_count += 1 ;unset($list_data[$k]); } </php>

@@ -12,6 +12,10 @@
  * 所有系统级别的配置
  */
 return array(
+		'URL_ROUTER_ON'   => true, //开启路由
+	'URL_ROUTE_RULES' => array( //定义路由规则
+			'Addons/execute/:_addons/:_controller/:_action' => array('Home/Addons/execute'),
+	 ),
     /* 模块相关配置 */
     'AUTOLOAD_NAMESPACE' => array('Addons' => ONETHINK_ADDON_PATH), //扩展模块列表
     'DEFAULT_MODULE'     => 'Home',

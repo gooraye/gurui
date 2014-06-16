@@ -557,11 +557,11 @@ abstract class Controller {
 	 *        	模型标识
 	 * @author 凡星
 	 */
-	public function common_lists($model = null, $page = 0, $templateFile = '') {
+	public function common_lists($model = null, $page = 0, $templateFile = '', $order='id desc') {
 		// 获取模型信息
 		is_array ( $model ) || $model = $this->getModel ( $model );
 		
-		$list_data = $this->_get_model_list ( $model, $page );
+		$list_data = $this->_get_model_list ( $model, $page, $order );
 		$this->assign ( $list_data );
 		// dump($list_data);
 		
@@ -664,7 +664,7 @@ abstract class Controller {
 				);
 			}
 			// 自动验证规则
-			if (! empty ( $attr ['validate_rule'] )) {
+			if (! empty ( $attr ['validate_rule'] ) || $attr['validate_type']=='unique') {
 				$validate [] = array (
 						$attr ['name'],
 						$attr ['validate_rule'],
@@ -702,7 +702,7 @@ abstract class Controller {
 	}
 	
 	// 获取模型列表数据
-	public function _get_model_list($model = null, $page = 0) {
+	public function _get_model_list($model = null, $page = 0, $order='id desc') {
 		$page || $page = I ( 'p', 1, 'intval' ); // 默认显示第一页数据
 		                                         
 		// 解析列表规则
@@ -732,11 +732,11 @@ abstract class Controller {
 			$count = M ( $parent )->join ( "INNER JOIN {$fix}{$name} ON {$fix}{$parent}.id = {$fix}{$name}.id" )->where ( $map )->count ();
 			
 			// 查询数据
-			$data = M ( $parent )->join ( "INNER JOIN {$fix}{$name} ON {$fix}{$parent}.id = {$fix}{$name}.id" )->field ( empty ( $fields ) ? true : $fields )->where ( $map )->order ( "{$fix}{$parent}.id DESC" )->page ( $page, $row )->select ();
-		} else {
+$data = M ( $parent )->join ( "INNER JOIN {$fix}{$name} ON {$fix}{$parent}.id = {$fix}{$name}.id" )->field ( empty ( $fields ) ? true : $fields )->where ( $map )->order ( "{$fix}{$parent}.{$order}" )->page ( $page, $row )->select ();
+} else {
 			empty ( $fields ) || in_array ( 'id', $fields ) || array_push ( $fields, 'id' );
 			$name = parse_name ( get_table_name ( $model ['id'] ), true );
-			$data = M ( $name )->field ( empty ( $fields ) ? true : $fields )->where ( $map )->order ( 'id DESC' )->page ( $page, $row )->select ();
+			$data = M ( $name )->field ( empty ( $fields ) ? true : $fields )->where ( $map )->order ( $order )->page ( $page, $row )->select ();
 			
 			/* 查询记录总数 */
 			$count = M ( $name )->where ( $map )->count ();

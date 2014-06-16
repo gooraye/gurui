@@ -11,8 +11,11 @@
       
          <ul class="small_pic_list">
     <volist name="list_data" id="vo">
-    	<li>
-        	<a href="{:U('detail', 'id='.$vo[id])}">
+    	<li> <empty name="vo.tourl">
+                 <a href="{:U('detail', 'id='.$vo[id])}">
+              <else/>
+                <a href="{$vo[tourl] }">
+              </empty>
                 <h6>{$vo.title}</h6>
                 <p>{$vo.intro}</p>
                 <span class="list_time">{$vo.cTime|time_format}</span>

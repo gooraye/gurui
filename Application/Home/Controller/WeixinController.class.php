@@ -25,6 +25,8 @@ class WeixinController extends HomeController {
 		
 		$this->token = $data ['ToUserName'];
 		
+		
+
 		$this->initFollow ($weixin);
 		
 		// 记录日志

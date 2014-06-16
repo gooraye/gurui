@@ -117,6 +117,12 @@ class Dispatcher {
 		}
 		$depr = C ( 'URL_PATHINFO_DEPR' );
 		define ( 'MODULE_PATHINFO_DEPR', $depr );
+		//=====weiphp 修改 支持 index.php/addon/Vote/Vote/lists 这样的插件短地址
+		$info = trim ( $_SERVER ['PATH_INFO'], '/' );
+		$re = C('URL_ROUTE_RULES');
+		if (substr ( $info, 0, 6 ) == 'addon/' && C('URL_ROUTER_ON') && isset($re['Addons/execute/:_addons/:_controller/:_action'])) {
+			$info = str_replace ( 'addon/', 'Home/Addons/execute/', $info );
+		}
 		define ( '__INFO__', trim ( $_SERVER ['PATH_INFO'], '/' ) );
 		// URL后缀
 		define ( '__EXT__', strtolower ( pathinfo ( $_SERVER ['PATH_INFO'], PATHINFO_EXTENSION ) ) );

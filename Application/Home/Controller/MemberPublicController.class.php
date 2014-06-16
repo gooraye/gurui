@@ -257,7 +257,7 @@ class MemberPublicController extends HomeController {
 				);
 			}
 			// 自动验证规则
-			if (! empty ( $attr ['validate_rule'] )) {
+			if (! empty ( $attr ['validate_rule'] )  || $attr['validate_type']=='unique') {
 				$validate [] = array (
 						$attr ['name'],
 						$attr ['validate_rule'],

@@ -216,7 +216,8 @@ class PublicGroupController extends AdminController {
 		$this->assign ( $list_data );
 		$this->assign ( 'model', $model );
 		$this->meta_title = $model ['title'] . '管理';
-		$this->assign ( 'add_button', false );
+		//$this->assign ( 'add_button', false );
+		$this->assign ( 'add_url', U('Home/MemberPublic/add') );
 		$this->display ( 'Think:lists' );
 	}
 	function PublicLink() {
