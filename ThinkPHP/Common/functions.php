@@ -1191,7 +1191,7 @@ function load_ext_file($path) {
         $files      =  explode(',',C('LOAD_EXT_FILE'));
         foreach ($files as $file){
             $file   = $path.'Common/'.$file.'.php';
-            if(is_file($file)) include $file;
+            if(is_file($file)) include_once $file;
         }
     }
     // 加载自定义的动态配置文件
@@ -1201,7 +1201,7 @@ function load_ext_file($path) {
         foreach ($configs as $key=>$config){
             $file   = $path.'Conf/'.$config.'.php';
             if(is_file($file)) {
-                is_numeric($key)?C(include $file):C($key,include $file);
+                is_numeric($key)?C(include_once $file):C($key,include_once $file);
             }
         }
     }
